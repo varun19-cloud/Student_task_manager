@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <h1>🎓 Student Task Manager</h1>
+
+            <p>Manage your assignments, tasks and deadlines</p>
+
+        </header>
+
+
+        <!-- Add Task Form -->
+
+        <section class="card">
+
+            <h2>Add New Task</h2>
+
+            <form id="taskForm">
+
+                <div class="form-group">
+
+                    <label>Task Name</label>
+
+                    <input
+                        type="text"
+                        id="taskName"
+                        placeholder="Enter task name"
+                    >
+
+                    <span id="taskError"></span>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Subject</label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="Enter subject"
+                    >
+
+                    <span id="subjectError"></span>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Deadline</label>
+
+                    <input
+                        type="date"
+                        id="deadline"
+                    >
+
+                    <span id="dateError"></span>
+
+                </div>
+
+
+                <button type="submit">
+
+                    Add Task
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Search and Filter -->
+
+        <section class="card">
+
+            <h2>My Tasks</h2>
+
+            <div class="controls">
+
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="🔍 Search tasks..."
+                >
+
+
+                <select id="statusFilter">
+
+                    <option value="all">All Tasks</option>
+
+                    <option value="pending">Pending</option>
+
+                    <option value="completed">Completed</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Task Table -->
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Task</th>
+
+                        <th>Subject</th>
+
+                        <th>Deadline</th>
+
+                        <th>Status</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="taskTable">
+
+                </tbody>
+
+            </table>
+
+
+            <p id="noTasks">
+
+                No tasks available.
+
+            </p>
+
+        </section>
+
+
+        <!-- Dashboard -->
+
+        <section class="dashboard">
+
+            <div class="stat">
+
+                <h3 id="totalTasks">0</h3>
+
+                <p>Total Tasks</p>
+
+            </div>
+
+
+            <div class="stat">
+
+                <h3 id="pendingTasks">0</h3>
+
+                <p>Pending</p>
+
+            </div>
+
+
+            <div class="stat">
+
+                <h3 id="completedTasks">0</h3>
+
+                <p>Completed</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- API Section -->
+
+        <section class="card">
+
+            <h2>Student Resources</h2>
+
+            <button id="loadUsers">
+
+                Load Sample Student Data
+
+            </button>
+
+            <div id="users"></div>
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
